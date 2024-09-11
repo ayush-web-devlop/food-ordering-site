@@ -3,7 +3,7 @@ import Header from '@/components/layout/Header'
 import localFont from "next/font/local";
 import "./globals.css";
 import Link from "next/link";
-import { SessionProvider } from 'next-auth/react';
+import { Toaster } from 'react-hot-toast';
 
 
 
@@ -31,11 +31,12 @@ export default function RootLayout({ children }) {
       >
         <main className="max-w-6xl mx-auto p-2 md:p-5">
           <AppProvider>
-          <Header/>
-          {children}
-          <footer className="border-t p-8 text-center text-gray-500 mt-8">
-            &copy; 2024 all rights reserved
-          </footer>
+            <Toaster />
+            <Header />
+            {children}
+            <footer className="border-t p-8 text-center text-gray-500 mt-8">
+              &copy; 2024 all rights reserved
+            </footer>
           </AppProvider>
         </main>
       </body>
